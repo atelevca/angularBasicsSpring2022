@@ -1,0 +1,11 @@
+<li class="list-group-item" aria-current="true">
+    <div [ngStyle]="{'color':+noteItem.id>0? '#88b59c':'#77a7ff'}" class="top-row">
+        <h3>
+            {{noteItem.label}}
+        </h3>
+        <button (click)="removeNote()" type="button" class="btn-close" aria-label="Close"></button>
+    </div>
+    <div class="body">
+        {{noteItem.data}}
+    </div>
+</li>

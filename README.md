@@ -9,7 +9,7 @@ In project should be at least:
 Use your imagination for the design :)
 
 Usefull commands:
-npm install -g @angular/cli
-ng new
-ng g 
-ng serve
+- npm install -g @angular/cli
+- ng new
+- ng g 
+- ng serve

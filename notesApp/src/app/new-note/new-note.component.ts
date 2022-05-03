@@ -9,7 +9,8 @@ export class NewNoteComponent  {
   public note:Note={
     id:'0',
     label:"This is",
-    data:"Test note"
+    data:"Test note",
+    date: new Date()+'',
   };
 
   @Output() onNoteSubmit = new EventEmitter<Note>();
@@ -18,9 +19,10 @@ export class NewNoteComponent  {
     this.onNoteSubmit.next(this.note);
     
     this.note={
-      id:'',
-      label:'',
-      data:'',
+      id: '',
+      label: '',
+      data: '',
+      date: '',
     }
   }
  

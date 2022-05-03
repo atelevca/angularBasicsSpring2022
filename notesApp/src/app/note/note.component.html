@@ -1,4 +1,7 @@
 <li class="list-group-item" aria-current="true">
+    <div class="date">
+        Created on: {{noteItem.date | date:"dd/MM/yyy"}}
+    </div>
     <div [ngStyle]="{'color':+noteItem.id>0? '#88b59c':'#77a7ff'}" class="top-row">
         <h3>
             {{noteItem.label}}

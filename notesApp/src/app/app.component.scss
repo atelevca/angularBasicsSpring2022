@@ -10,3 +10,13 @@ ul {
     font-weight: 500;
     font-size: 20px;
 }
+.inline-row {
+    display: flex;
+    align-items: center;
+
+    .index {
+        margin: 0px 7px;
+        color: #dc3545;
+        font-size: 25px;
+    }
+}

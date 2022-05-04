@@ -4,10 +4,10 @@
     You have more than 2 notes!
 </div>
 <ul class="list-group col-8 container">
-    <div class="inline-row" *ngFor="let item of notes; let i=index">
+    <li class="inline-row" *ngFor="let item of notes; let i=index">
         <div class="index">
             {{i}}
         </div>
         <app-note (onRemove)="removeNote($event)" [noteItem]="item"></app-note>
-    </div>
+    </li>
 </ul>

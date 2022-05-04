@@ -1,5 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { Note } from '../models/note.model';
+import { Note } from '../../models/note.model';
 @Component({
   selector: 'app-new-note',
   templateUrl: './new-note.component.html',

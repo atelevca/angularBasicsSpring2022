@@ -2,6 +2,7 @@ import { Component, Input } from '@angular/core';
 import books from 'books.json'
 import { initialValue } from 'src/helper/initial';
 import { Book } from 'src/model/Book.model';
+import { TransferDataService } from './service/transfer-data.service';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +11,7 @@ import { Book } from 'src/model/Book.model';
 })
 
 export class AppComponent {
-  constructor( ){}
+  constructor( private dataService: TransferDataService ){}
   @Input()
   public actualBook: Book = initialValue
 
@@ -25,4 +26,8 @@ export class AppComponent {
   }
 
   initialData: Array<Book> = books
+
+  ngOnInit(): void {
+    this.dataService.bookSubject.subscribe(book => this.actualBook = book)
+  }
 }

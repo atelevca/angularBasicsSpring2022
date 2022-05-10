@@ -19,7 +19,6 @@
         <app-card
           *ngFor="let book of initialData"
           [book]="book"
-          (onHandleBook)="handleActualBook($event)"
         ></app-card>
 
       </div>
@@ -27,6 +26,5 @@
   </div>
   <app-side-card
     [actualBook]="actualBook"
-    (onHandleBook)="handleActualBook($event)"
   ></app-side-card>
 </div>

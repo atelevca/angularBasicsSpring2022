@@ -18,7 +18,7 @@ export class SideCardComponent implements OnInit {
   onHandleBook = new EventEmitter<Book>();
 
   public handlerBook() {
-    this.onHandleBook.next(initialValue)
+    this.dataService.bookSubject.next(initialValue)
   }
 
   ngOnInit(): void {

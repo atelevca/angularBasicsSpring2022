@@ -1,0 +1,33 @@
+
+<div class="main">
+  <h3 >Book of the Day  </h3>
+  <div class="card">
+    <div *ngFor="let book of bookOfTheDay" class="wrapper" >
+      <div class="inner">
+        <div class="inner-image">
+          <img src={{book.image}} alt={{book.author}} srcset={{book.image}}>
+          <div class="background"></div>
+        </div>
+        <div class="info">
+          <h3 class="title">{{book.title}} </h3>
+          <h4 class="author">{{book.author}} </h4>
+          <div class="stat">
+            <div class="stat__item">
+              <div class="num"> {{book.info.pages}} </div>
+              <div class="descriptor"> pages </div>
+            </div>
+            <div class="stat__item">
+              <div class="num"> {{book.info.reviews}} </div>
+              <div class="descriptor"> reviews </div>
+            </div>
+            <div class="stat__item">
+              <div class="num"> {{book.info.rating}} </div>
+              <div class="descriptor"> rating </div>
+            </div>
+          </div>
+        </div>
+      <div class="btn"(click)="handlerBook(book)" > </div>
+      </div>
+    </div>
+  </div>
+</div>

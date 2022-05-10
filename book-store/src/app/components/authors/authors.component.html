@@ -1,0 +1,16 @@
+<div class="authors">
+  <h3>Authors</h3>
+
+  <swiper [effect]="'cards'" [config]="config" class="mySwiper" >
+    <ng-template *ngFor="let author of authorsNames" class="slider__card" swiperSlide>
+      <div class="container">
+        <div class="signal"> </div>
+        <div class="quote">{{filteredAuthors[author][0].summary.split(' ').splice(0, 8).join(' ')}} ...</div>
+        <div class="author">{{author}}</div>
+      </div>
+      <div class="face__gradient"></div>
+      <img src={{faces[author]}}  alt="" class="face">
+      <div class="gradient"></div>
+    </ng-template>
+  </swiper>
+</div>

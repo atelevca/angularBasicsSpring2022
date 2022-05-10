@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { TransferDataService } from 'src/app/service/transfer-data.service';
 import { initialValue } from 'src/helper/initial';
 import { Book } from 'src/model/Book.model';
 
@@ -8,7 +9,7 @@ import { Book } from 'src/model/Book.model';
   styleUrls: ['./side-card.component.sass']
 })
 export class SideCardComponent implements OnInit {
-  constructor(){}
+  constructor(private dataService: TransferDataService){}
 
   @Input()
   actualBook: Book = initialValue
@@ -20,5 +21,7 @@ export class SideCardComponent implements OnInit {
     this.onHandleBook.next(initialValue)
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.dataService.bookSubject.subscribe(book => this.actualBook = book)
+  }
 }

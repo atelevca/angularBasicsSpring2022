@@ -1,4 +1,5 @@
 import { Input, Component, OnInit, Output, EventEmitter  } from '@angular/core'
+import { TransferDataService } from 'src/app/service/transfer-data.service';
 import { initialValue } from 'src/helper/initial'
 import { Book } from 'src/model/Book.model'
 
@@ -9,7 +10,7 @@ import { Book } from 'src/model/Book.model'
 })
 
 export class CardComponent implements OnInit {
-  constructor( ){}
+  constructor( private dataService: TransferDataService){}
 
   @Input()
   book: Book = initialValue
@@ -18,7 +19,8 @@ export class CardComponent implements OnInit {
   onHandleBook = new EventEmitter<Book>();
 
   public handlerBook() {
-    this.onHandleBook.next(this.book)
+    // this.onHandleBook.next(this.book)
+    this.dataService.bookSubject.next(this.book)
   }
 
   ngOnInit(): void {}

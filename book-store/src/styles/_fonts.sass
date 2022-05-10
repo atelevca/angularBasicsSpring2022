@@ -1,0 +1,46 @@
+@use './_colors' as *
+
+@mixin fontFamily($family: Gilroy)
+  font-family: $family
+  font-style: normal
+
+@mixin fontStyle($family: '', $weight: 500, $size: 12px, $line-height: 120%)
+  font-family: $family
+  font-style: normal
+  font-weight: $weight
+  font-size: $size
+  line-height: $line-height
+
+@mixin font_H1($family: 'Neue Machina', $weight: 700, $size: 40px, $line-height: 120%)
+  @include fontFamily($family: $family )
+  font-weight: $weight
+  font-size: $size
+  line-height: $line-height
+
+@mixin font_H2($family: Gilroy, $weight: 700, $size: 32px, $line-height: 120%)
+  @include fontFamily($family: $family )
+  font-weight: $weight
+  font-size: $size
+  line-height: $line-height
+
+@mixin font_H3($family: Gilroy, $weight: 700, $size: 24px, $line-height: 120%)
+  @include fontFamily($family: $family )
+  font-weight: $weight
+  font-size: $size
+  line-height: $line-height
+
+@mixin font_H4($family: Gilroy, $weight: 700, $size: 19px, $line-height: 120%)
+  @include fontFamily($family: $family )
+  font-weight: $weight
+  font-size: $size
+  line-height: $line-height
+
+@mixin font_P($family: Gilroy, $weight: 400, $size: 19px, $line-height: 120%)
+  @include fontFamily($family: $family )
+  font-weight: $weight
+  font-size: $size
+  line-height: $line-height
+
+
+
+

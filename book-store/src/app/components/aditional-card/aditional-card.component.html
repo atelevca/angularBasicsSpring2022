@@ -1,7 +1,7 @@
 
 <div class="main">
   <h3 >Book of the Day  </h3>
-  <div class="card">
+  <div class="cards">
     <div *ngFor="let book of bookOfTheDay" class="wrapper" >
       <div class="inner">
         <div class="inner-image">
@@ -9,7 +9,7 @@
           <div class="background"></div>
         </div>
         <div class="info">
-          <h3 class="title">{{book.title}} </h3>
+          <h2 class="title">{{book.title}} </h2>
           <h4 class="author">{{book.author}} </h4>
           <div class="stat">
             <div class="stat__item">

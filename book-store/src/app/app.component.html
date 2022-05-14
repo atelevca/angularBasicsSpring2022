@@ -1,30 +1,18 @@
 <div class="app">
 
-  <app-topic-switcher
-    [activeTab]="activeTab"
-    (handlerActiveTab)="setActiveTab($event)">
-  </app-topic-switcher>
+  <app-topic-switcher [activeTab]="activeTab" (handlerActiveTab)="setActiveTab($event)"> </app-topic-switcher>
 
-  <div *ngIf="activeTab === 0" >
-    <app-aditional-card
-      [data]="initialData"
-      (onHandleBook)="handleActualBook($event)"
-    > </app-aditional-card>
+  <div class="content" *ngIf="activeTab === 0" >
+    <app-aditional-card class="content-aditional" [data]="initialData" (onHandleBook)="handleActualBook($event)" > </app-aditional-card>
+    <app-authors class="content-authors"  [data]="initialData"></app-authors>
 
-    <app-authors [data]="initialData"></app-authors>
-
-    <div class="slider">
+    <div class="content-slider">
       <h3>Week of Modern Classics</h3>
       <div class="wrapper" [ngClass]="{'open': actualBook.ISBN > 0 }">
-        <app-card
-          *ngFor="let book of initialData"
-          [book]="book"
-        ></app-card>
-
+        <app-card class="card" *ngFor="let book of initialData" [book]="book" ></app-card>
       </div>
     </div>
   </div>
-  <app-side-card
-    [actualBook]="actualBook"
-  ></app-side-card>
+
+  <app-side-card [actualBook]="actualBook" ></app-side-card>
 </div>

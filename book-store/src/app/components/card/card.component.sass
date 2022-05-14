@@ -36,3 +36,16 @@ h3
 p
   @include font_P($size: 1.7rem)
   color: $color-grey
+
+@media (max-width: $breakpoint-tablet)
+  .wrapper
+    width: 100%
+
+  .card
+    width: 100%
+    aspect-ratio: 9 / 16
+    height: auto
+
+    img
+      height: auto
+      aspect-ratio: 9 / 14

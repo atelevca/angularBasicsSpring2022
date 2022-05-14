@@ -6,13 +6,20 @@
 .slider
   width: 100%
   overflow-y: hidden
+  grid-column: srart / 1
+
+.card
+  flex-grow: 1
 
 .wrapper
   width: 100%
   display: flex
-  column-gap: 24px
+  gap: 2.4rem
   overflow-y: hidden
   transition: 0.3s width ease
+
+  &::-webkit-scrollbar
+    display: none
 
 .open
   width: calc(100% - 30vw - 12px)
@@ -20,3 +27,60 @@
 h3
   @include font_H3($family: Neue Machina)
   margin-bottom: 12px
+
+.content
+  display: grid
+  grid-template-columns: [start] repeat(3, 1fr)[end]
+  grid-template-rows: [start] repeat(3, auto) [end]
+  column-gap: 2.4rem
+  row-gap: 3.6rem
+
+  &-aditional
+    grid-column: start/ span 2
+    grid-auto-rows: 1
+    grid-row: 1
+    padding: 0
+
+  &-authors
+    grid-column: 3
+    grid-auto-rows: 1
+    grid-row: 1
+
+  &-slider
+    grid-column: start / end
+
+@media  ( max-width: $breakpoint-tablet )
+  .app
+    padding: 0
+    overflow-x: hidden
+
+  .wrapper
+    flex-wrap: wrap
+
+  .open
+    width: auto
+
+  .content
+    &-book
+      grid-template-columns: [start] auto [end]
+      grid-template-rows: [start] auto auto auto [end]
+      grid-gap: 4.8rem 2.4rem
+
+    &-aditional
+      grid-column: start / end
+      grid-row: 2
+      padding: 0
+
+    &-authors
+      grid-column: start / end
+      grid-row: 1
+
+    &-slider
+      width: 100vw
+      grid-column: start / end
+      grid-row: 3
+      padding: 0 2.4rem
+
+  .card
+    width: calc(50% - 1.2rem)
+    flex-grow: unset

@@ -1,4 +1,4 @@
-import { Observable, of, Subject } from 'rxjs';
+import { Subject } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { initialValue } from 'src/helper/initial';
 import { Book } from 'src/model/Book.model';

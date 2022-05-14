@@ -7,7 +7,7 @@ html
   @media ( max-width: 2000px )
     font-size: calc(100vw / 2000 * 10)
 
-  @media ( max-width: 750px )
+  @media ( max-width: $breakpoint-tablet)
     font-size: calc(100vw / 750 * 10)
 
 *
@@ -66,5 +66,8 @@ q:before, q:after
 
 .container
   width: 1920px
+  overflow-x: scroll
   margin: 0 auto
-  padding: 0 48px
+
+@media  (max-width: $breakpoint-tablet)
+

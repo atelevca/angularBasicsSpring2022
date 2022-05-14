@@ -1,24 +1,23 @@
 @use '../../../styles/' as *
 
 .main
-  display: inline-flex
+  display: grid
   flex-direction: column
-  margin-right: 2.4rem
 
-.card
+.cards
   display: flex
-  column-gap: 2.4rem
-  margin-bottom: 4.8rem
 
 .wrapper
   display: flex
   align-items: center
-  width: 59rem
   height: 26.6rem
-
+  flex-grow: 1
   filter: drop-shadow(0px 4px 12px rgba(0, 0, 0, 0.15))
   border-radius: 2.4rem
   background: $color-white
+
+  &:not(&:last-of-type)
+    margin-right: 2.4rem
 
 .inner
   display: flex
@@ -111,3 +110,38 @@ h3
 
   &:hover
     background: darken($color-primary, 10% )
+
+@media (max-width: $breakpoint-tablet)
+  .main
+    width: 100vw
+    flex-wrap: wrap
+    grid-column: start / end
+    grid-row: 2
+
+    &::-webkit-scrollbar
+      display: none
+
+  .cards
+    overflow-x: scroll
+    margin-bottom: 0
+    padding: 1px 0
+
+    &::-webkit-scrollbar
+      display: none
+
+  h3
+    margin-left: 2.4rem
+
+  .wrapper
+    width: calc(100vw - 12rem)
+    filter: drop-shadow(0px 4px 12px rgba(0, 0, 0, 0))
+    border: 1px solid rgba($color-grey, 40%)
+
+    &:first-of-type
+      margin-left: 2.4rem
+
+    &:last-of-type
+      margin-right: 2.4rem
+
+  .inner
+    width: 100vw

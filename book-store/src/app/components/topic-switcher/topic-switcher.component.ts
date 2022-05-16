@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { TransferDataService } from 'src/app/service/transfer-data.service';
 
 @Component({
   selector: 'app-topic-switcher',
@@ -6,7 +7,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
   styleUrls: ['./topic-switcher.component.sass']
 })
 export class TopicSwitcherComponent implements OnInit {
-  constructor() { }
+  constructor(private dataService: TransferDataService) {}
 
   @Input()
   activeTab: number = 0
@@ -18,6 +19,10 @@ export class TopicSwitcherComponent implements OnInit {
   public setActive(item: number): void {
     this.activeTab = item
     this.handlerActiveTab.next(item)
+  }
+
+  public loginHandler() {
+    this.dataService.loginSubject.next('login')
   }
 
   ngOnInit(): void {}

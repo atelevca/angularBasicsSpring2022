@@ -1,45 +1,12 @@
-<div class="side" [ngClass]="{'open': actualBook.ISBN > 0}" >
+<div class="side" [ngClass]="{'open': actualBookId > 0 || login === 'login' }" >
   <div class="close" (click)="handlerBook()" ></div>
   <div class="wrapper">
-    <h3 class="wrapper__title">About the book </h3>
-    <div class="content">
-    <img
-      src={{actualBook.image}}
-      alt={{actualBook.title}}
-      srcset={{actualBook.image}}
-    >
-    <div class="title">{{actualBook.title}} </div>
-    <div class="author">{{actualBook.author}} </div>
+    <h3 class="wrapper__title">{{actualTitle}} </h3>
 
-    <div class="stat">
-      <div class="stat__item">
-        <div class="num"> {{actualBook.info.pages}} </div>
-        <div class="descriptor">pages</div>
-      </div>
-      <div class="stat__item">
-        <div class="num"> {{actualBook.info.reviews}} </div>
-        <div class="descriptor">reviews</div>
-      </div>
-      <div class="stat__item">
-        <div class="num"> {{actualBook.info.rating}} </div>
-        <div class="descriptor">rating</div>
-      </div>
+    <div class="modal">
+      <app-preview-book> </app-preview-book>
+      <app-login> </app-login>
     </div>
-
-    <div class="summary">
-      <div class="summary__descriptor">
-        <span>Plot</span> <span>ISBN: {{actualBook.ISBN}}</span>
-      </div>
-      <p>{{actualBook.summary.substring(0, 520)}}... </p>
-    </div>
-
-    <div class="control">
-      <div class="price">{{ actualBook.price.value | currency: actualBook.price.currency }}</div>
-      <button>Read</button>
-    </div>
-
-    </div>
-
 
   </div>
 </div>

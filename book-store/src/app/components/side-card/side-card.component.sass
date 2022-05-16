@@ -20,7 +20,7 @@ $space: 2.4rem
   align-items: center
   margin: 0 auto
   height: 100%
-  padding: 4rem
+  padding: 4rem 8rem
   overflow-y: scroll
 
   &__title
@@ -30,135 +30,7 @@ $space: 2.4rem
     top: 0
     padding: $space 0
     background: linear-gradient(0deg, rgba($color-black, 0) -0%, $color-black 80%)
-
-.content
-  width: 38rem
-  display: flex
-  flex-direction: column
-  align-items: center
-  padding: 4.8rem 0 8rem
-
-h3
-  @include font_H3($size: 2.4rem)
-  color: $color-white
-  margin-bottom: $space
-
-img
-  width: 21rem
-  height: 32rem
-  aspect-ratio: auto
-  object-fit: cover
-  border-radius: 2.4rem
-  border: 0.2rem solid $color-white
-  margin-bottom: $space
-
-.title
-  @include font_H2($weight: 500, $size: 2.4rem)
-  color: $color-white
-  margin-bottom: 1.4rem
-
-.author
-  @include font_H2($weight: 400, $size: 1.8rem)
-  color: $color-grey
-  margin-bottom: $space
-
-.stat
-  display: flex
-  justify-content: space-between
-  background: rgba($color-white, 5%)
-  min-width: 30rem
-  width: 100%
-  min-height: 30px
-  border-radius: 2.4rem
-  padding: 1.8rem 3rem
-  margin-bottom: $space
-
-  &__item
-    display: flex
-    position: relative
-    flex-grow: 1
-    flex-direction: column
-    align-items: center
     color: $color-white
-
-    &:not(:last-of-type)::after
-      content: ''
-      display: block
-      position: absolute
-      height: 2rem
-      width: 1px
-      background: $color-grey
-      right: 0
-      top: 25%
-
-.num
-  @include font_H4($size: 2rem)
-  color: $color-white
-
-.descriptor
-  @include font_P($size: 1.5rem)
-  color: $color-grey
-
-.summary
-  display: flex
-  flex-direction: column
-  width: 100%
-  margin-bottom: $space
-
-  &__descriptor
-    display: flex
-    justify-content: space-between
-    align-items: center
-    margin-bottom: $space
-
-    span
-      &:first-of-type
-        @include font_H4
-        color: $color-white
-
-      &:last-of-type
-        @include font_P($size: 1.4rem)
-        color: rgba($color-white, 40%)
-  p
-    @include font_P($size: 1.6rem, $line-height: 2.4rem)
-    height: auto
-    background: linear-gradient(180deg, #B6B6BA -0%, rgba($color-black, 0) 99%)
-    -webkit-background-clip: text
-    -webkit-text-fill-color: transparent
-    background-clip: text
-    text-fill-color: transparent
-
-.control
-  position: fixed
-  padding: 2rem 0 4rem
-  bottom: 0
-  background: $color-black
-
-  display: flex
-  width: 44rem
-  column-gap: $space
-  background: linear-gradient(180deg, rgba($color-black, 0) -23.08%, $color-black 100%)
-
-  .price
-    display: flex
-    @include font_P($size: 2.4rem)
-    padding: 1.9rem 2.6rem
-    border-radius: 4rem
-    border: 1px solid $color-primary
-    color: $color-white
-    text-align: center
-    background: $color-black
-
-  button
-    @include font_P($size: 2.4rem)
-    border-radius: 4rem
-    background: $color-primary
-    flex-grow: 1
-    color: $color-white
-    transition: 0.3s background ease
-    cursor: pointer
-    &:hover
-      background: darken($color-primary, 10%)
 
 .close
   position: absolute
@@ -185,6 +57,8 @@ img
     transform-origin: right top
     transform: rotateZ(-45deg) translate(-8px, -8px)
 
+.modal
+  width: 100%
 
 @media  ( max-width: 750px  )
   .side

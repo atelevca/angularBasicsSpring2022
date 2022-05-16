@@ -1,0 +1,97 @@
+@use '../../../styles/' as *
+
+.main
+  display: flex
+  flex-direction: column
+  width: 100%
+  align-items: center
+
+form
+  width: 100%
+  margin-bottom: 2.4rem
+
+.wrapper
+  display: flex
+  flex-grow: 1
+  justify-content: flex-end
+  padding-right: 4.8rem
+
+.login-form
+  margin-top: 4.8rem
+
+.label
+  display: flex
+  flex-direction: column
+  @include fontStyle($family: 'Gilroy', $size: 2rem, $line-height: 3.2rem )
+  color: $color-white
+  width: 100%
+  margin-bottom: 1.2rem
+  text-transform: capitalize
+  &:last-of-type
+    margin-bottom: 3.4rem
+
+  input
+    background: #292C31
+    border: 1px solid #FFFFFF
+    border-radius: 1.6rem
+    height: 6.4rem
+    margin-top: 0.2rem
+    @include fontStyle($family: 'Gilroy', $size: 2rem, $line-height: 3.2rem )
+    color: rgba($color-white, 80%)
+    padding: 1.6rem
+    margin-bottom: 1.2rem
+
+    &::placeholder
+      color: rgba($color-white, 20%)
+
+button
+  @include fontStyle($family: 'Gilroy', $size: 2rem, $line-height: 3.2rem )
+  height: 6.4rem
+  width: 100%
+  background: $color-primary
+  color: $color-white
+  border-radius: 1.2rem
+  transition: 0.3s background ease
+
+  &:not(:disabled)
+    &:hover
+      cursor: pointer
+      background: darken($color-primary, 10%)
+
+.error
+  @include fontStyle($family: 'Gilroy', $size: 1.6rem, $line-height: 2.4rem )
+  color: red
+  text-transform: uppercase
+
+  &__input
+    border: 1px solid red!important
+
+
+.content
+  display: flex
+  flex-direction: column
+  row-gap: 2.4rem
+  overflow: scroll
+  width: 100%
+
+.title
+  @include fontStyle($family: 'Gilroy', $size: 2rem, $line-height: 3.2rem )
+  color: $color-white
+
+.track
+  display: flex
+  column-gap: 2.4rem
+  overflow: auto
+
+.user
+  display: flex
+  flex-direction: column
+  @include fontStyle($family: 'Gilroy', $size: 1.6rem, $line-height: 2.4rem, $weight: 500 )
+  color: $color-white
+  width: auto
+  padding: 24px 48px 24px 24px
+  border: 1px solid rgba($color-white, 40%)
+  border-radius: 24px
+
+.name
+  white-space: nowrap

@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import getRandomNumber from 'src/helper/randomNum';
 import { Book } from 'src/model/Book.model';
+import { TransferDataService } from 'src/app/service/transfer-data.service';
 
 // type CardBook = Omit<Book, 'price'>
 
@@ -10,7 +11,8 @@ import { Book } from 'src/model/Book.model';
   styleUrls: ['./aditional-card.component.sass']
 })
 export class AditionalCardComponent implements OnInit {
-  constructor() { }
+  constructor(private dataService: TransferDataService) { }
+
   @Input()
   data: Array<Book> = []
 
@@ -19,8 +21,8 @@ export class AditionalCardComponent implements OnInit {
   @Output()
   onHandleBook = new EventEmitter<Book>();
 
-  public handlerBook(book: Book) {
-    this.onHandleBook.next(book)
+  public handlerBook(bookISBN: number) {
+    this.dataService.bookSubjectId.next(bookISBN)
   }
 
   ngOnInit(): void {

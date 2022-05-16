@@ -1,5 +1,4 @@
-import { Component, Input, OnInit, ViewEncapsulation, ViewChild  } from '@angular/core'
-import { SwiperComponent } from 'swiper/angular'
+import { Component, Input, OnInit, ViewEncapsulation  } from '@angular/core'
 import { Book } from 'src/model/Book.model'
 import authors from 'src/helper/faces'
 
@@ -32,7 +31,7 @@ export class AuthorsComponent implements OnInit {
   filterAuthors(data: Array<Book>) {
     const initalData: any = {}
     data.forEach((book: Book) => {
-      const {author} = book
+      const { author } = book
       if (author in initalData ) {
         initalData[author].push(book)
       } else {
@@ -46,7 +45,5 @@ export class AuthorsComponent implements OnInit {
 
   ngOnInit(): void {
     this.filterAuthors(this.data)
-    console.log(this.filteredAuthors)
   }
-
 }

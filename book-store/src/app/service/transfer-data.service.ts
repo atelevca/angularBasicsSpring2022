@@ -1,8 +1,8 @@
-import { Subject } from 'rxjs';
-import { Injectable } from '@angular/core';
-import { initialValue } from 'src/helper/initial';
-import { Book } from 'src/model/Book.model';
-
+import { Subject } from 'rxjs'
+import { Injectable } from '@angular/core'
+import { initialValue } from 'src/helper/initial'
+import { Book } from 'src/model/Book.model'
+import dataBooks from 'books.json'
 
 @Injectable({
   providedIn: 'root'
@@ -11,19 +11,26 @@ import { Book } from 'src/model/Book.model';
 export class TransferDataService {
   constructor() { }
   actualBook: Book = initialValue
+  dataBooks: Array<Book> = dataBooks
 
-  bookSubject = new Subject<Book>();
+  bookSubjectId = new Subject<number>()
+  loginSubject = new Subject<string>()
 
   addBook(book: Book) {
     this.actualBook = book
   }
 
-  clearBook(data: Book): void {
+  clearBook(): void {
     this.actualBook = initialValue
   }
 
-  // getBook(): Observable<Book> {
-  //   const book = of(this.actualBook)
-  //   return book
-  // }
+  getBook(id: number): Book {
+    const book = this.dataBooks.find((book: Book) => book.ISBN === id)
+    this.loginSubject.next('')
+    return book ? book : initialValue
+  }
+
+  getAllBook(): Array<Book> {
+    return this.dataBooks
+  }
 }

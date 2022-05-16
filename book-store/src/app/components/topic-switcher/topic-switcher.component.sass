@@ -15,3 +15,32 @@
 .active
   border-bottom: 3px solid $color-primary
   width: calc( 100% + 20px )
+
+
+
+.wrapper
+  display: flex
+  flex-grow: 1
+  justify-content: flex-end
+  padding-right: 4.8rem
+
+.login
+  display: flex
+  width: 56px
+  height: 56px
+  border-radius: 12px
+  padding: 8px
+  background: rgba($color-grey, 20% )
+  transition: background 0.3s ease
+  cursor: pointer
+
+  svg-icon
+    svg
+      transition: fill 0.3s ease
+
+  &:hover
+    background: rgba($color-primary, 100% )
+
+    svg-icon
+      svg
+        fill: $color-white

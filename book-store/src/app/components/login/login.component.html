@@ -1,0 +1,28 @@
+<div class="main" *ngIf="isOpen">
+  <form class="login-form" [formGroup]="form" (submit)="onSubmit()" >
+  <label class="label" for="name" *ngFor="let input of inputsData">
+    {{input.name}}:
+    <input
+      [ngClass]="{'error__input': form.controls[input.name].touched && form.controls[input.name].errors?.['message']}"
+      name={{input.name}}
+      type={{input.type}}
+      placeholder={{input.placeholder}}
+      formControlName={{input.name}}
+    >
+    <p class="error" *ngIf="form.controls[input.name].touched && form.controls[input.name].errors?.['message']">{{form.controls[input.name].errors['message']}}</p>
+  </label>
+
+  <button>Submit</button>
+</form>
+
+<div class="content" *ngIf="dataUsers.length && isOpen">
+  <div class="title">Users: {{dataUsers.length}} </div>
+  <div class="track">
+    <div class="user" *ngFor="let user of dataUsers">
+      <div class="name">Name: {{user.name}}</div>
+      <div class="name">Age: {{user.age}}</div>
+      <div class="name">Email: {{user.email}}</div>
+    </div>
+  </div>
+</div>
+</div>

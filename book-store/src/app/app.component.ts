@@ -27,7 +27,4 @@ export class AppComponent {
 
   initialData: Array<Book> = books
 
-  ngOnInit(): void {
-    this.dataService.bookSubject.subscribe(book => this.actualBook = book)
-  }
 }

@@ -1,6 +1,6 @@
 <div class="app">
 
-  <app-topic-switcher [activeTab]="activeTab" (handlerActiveTab)="setActiveTab($event)"> </app-topic-switcher>
+  <app-topic-switcher class="header" [activeTab]="activeTab" (handlerActiveTab)="setActiveTab($event)"> </app-topic-switcher>
 
   <div class="content" *ngIf="activeTab === 0" >
     <app-aditional-card class="content-aditional" [data]="initialData" (onHandleBook)="handleActualBook($event)" > </app-aditional-card>
@@ -14,5 +14,6 @@
     </div>
   </div>
 
-  <app-side-card [actualBook]="actualBook" ></app-side-card>
+  <app-side-card></app-side-card>
+
 </div>

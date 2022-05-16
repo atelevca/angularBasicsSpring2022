@@ -1,27 +1,34 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { TransferDataService } from 'src/app/service/transfer-data.service';
-import { initialValue } from 'src/helper/initial';
-import { Book } from 'src/model/Book.model';
+import { Component, OnInit } from '@angular/core';
+import { TransferDataService } from 'src/app/service/transfer-data.service'
 
 @Component({
   selector: 'app-side-card',
   templateUrl: './side-card.component.html',
   styleUrls: ['./side-card.component.sass']
 })
+
 export class SideCardComponent implements OnInit {
-  constructor(private dataService: TransferDataService){}
+  constructor(private dataService: TransferDataService) { }
 
-  @Input()
-  actualBook: Book = initialValue
+  actualBookId: number = 0
+  login: string = ''
+  actualTitle: string = ''
 
-  @Output()
-  onHandleBook = new EventEmitter<Book>();
-
-  public handlerBook() {
-    this.dataService.bookSubject.next(initialValue)
+  public handlerBook(): void {
+    this.dataService.bookSubjectId.next(0)
+    this.dataService.loginSubject.next('')
   }
 
   ngOnInit(): void {
-    this.dataService.bookSubject.subscribe(book => this.actualBook = book)
+    this.dataService.bookSubjectId.subscribe(id => {
+      this.actualBookId = id
+      if (id > 0) this.actualTitle = 'About the book'
+    })
+    this.dataService.loginSubject.subscribe(login => {
+      this.login = login
+      this.actualTitle = 'Welcome to accout'
+    })
   }
+
+  ngDoCheck() {}
 }

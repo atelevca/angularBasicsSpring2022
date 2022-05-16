@@ -19,10 +19,11 @@ export class CardComponent implements OnInit {
   onHandleBook = new EventEmitter<Book>();
 
   public handlerBook() {
-    // this.onHandleBook.next(this.book)
-    this.dataService.bookSubject.next(this.book)
+    this.dataService.bookSubjectId.next(this.book.ISBN)
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+
+  }
 
 }

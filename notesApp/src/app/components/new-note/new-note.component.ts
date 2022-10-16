@@ -16,14 +16,14 @@ export class NewNoteComponent  {
   @Output() onNoteSubmit = new EventEmitter<Note>();
 
   public submitNewNote(){
-    this.onNoteSubmit.next(this.note);
+    this.onNoteSubmit.emit(this.note);
     
-    this.note={
+    this.note = {
       id: '',
       label: '',
       data: '',
-      date: '',
-    }
+      date: new Date() + '',
+    };
   }
  
 }

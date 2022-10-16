@@ -7,20 +7,20 @@ import { NewNoteComponent } from './components/new-note/new-note.component';
 import { FormsModule } from '@angular/forms';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { NoteComponent } from './components/note/note.component';
+import { HighlightDirective } from './directives/highlight.directive';
+import { TruncatePipe } from './pipes/truncate.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     NewNoteComponent,
     NavbarComponent,
-    NoteComponent
+    NoteComponent,
+    HighlightDirective,
+    TruncatePipe,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

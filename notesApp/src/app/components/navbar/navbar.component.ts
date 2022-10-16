@@ -11,5 +11,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent  {
-public label: string='NOTES LIST';
+public label: string='NOTES';
 }

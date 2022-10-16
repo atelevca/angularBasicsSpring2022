@@ -9,6 +9,6 @@
         <button (click)="removeNote()" type="button" class="btn-close" aria-label="Close"></button>
     </div>
     <div class="body">
-        {{noteItem.data}}
+        {{noteItem.data | truncate}}
     </div>
 </li>

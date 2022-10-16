@@ -5,6 +5,7 @@ In project should be at least:
  - two structural directives
  - two attribute directives
  - one pipe
+ - *one custom directive and custom pipe
 
 Use your imagination for the design :)
 

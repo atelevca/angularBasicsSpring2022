@@ -16,14 +16,14 @@ export class AppComponent {
     },
   ];
 
-  public addNewNote(note: Note) {
+  public addNewNote(note: Note): void {
     this.notes.push({
       ...note,
       id: Math.random() + '',
     });
   }
 
-  public removeNote(id: string) {
+  public removeNote(id: string): void {
     this.notes = this.notes.filter((el: Note) => el.id !== id);
   }
 }

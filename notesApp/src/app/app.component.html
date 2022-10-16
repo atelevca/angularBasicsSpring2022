@@ -1,15 +1,13 @@
 <app-navbar></app-navbar>
 <app-new-note (onNoteSubmit)="addNewNote($event)"></app-new-note>
-<div *ngIf="notes.length>2" class="note-number" >
-    <p appHighlight defaultColor="transparent" highlightColor="yellow">
-        You have more than 2 notes!
-    </p>
+<div *ngIf="notes.length > 2" class="note-number">
+  <p appHighlight>You have more than 2 notes!</p>
 </div>
 <ul class="list-group col-8 container">
-    <li class="inline-row" *ngFor="let item of notes; let i=index">
-        <div class="index">
-            {{i}}
-        </div>
-        <app-note  [noteItem]="item" (onRemove)="removeNote($event)"></app-note>
-    </li>
+  <li class="inline-row" *ngFor="let item of notes; let i = index">
+    <div class="index">
+      {{ i }}
+    </div>
+    <app-note [noteItem]="item" (onRemove)="removeNote($event)"></app-note>
+  </li>
 </ul>

@@ -10,6 +10,11 @@ import { NoteComponent } from './components/note/note.component';
 
 import { HighlightDirective } from './directives/highlight.directive';
 import { TruncatePipe } from './pipes/truncate.pipe';
+import { BooksComponent } from './pages/books/books.component';
+import { NotesComponent } from './pages/notes/notes.component';
+import { SearchFilterPipe } from './pipes/search-filter.pipe';
+import { BookComponent } from './components/book/book.component';
+import { DropdownDirective } from './directives/dropdown.directive';
 
 @NgModule({
   declarations: [
@@ -19,6 +24,11 @@ import { TruncatePipe } from './pipes/truncate.pipe';
     NavbarComponent,
     HighlightDirective,
     TruncatePipe,
+    BooksComponent,
+    NotesComponent,
+    SearchFilterPipe,
+    BookComponent,
+    DropdownDirective,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],

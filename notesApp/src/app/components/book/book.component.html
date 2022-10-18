@@ -1,0 +1,27 @@
+<li class="book-item" [ngClass]="i % 2 === 0 ? 'even' : 'odd'">
+  <div class="book-item__image">
+    <img src='{{book.image}}' alt="book-img">
+  </div>
+  <div class="book-info">
+    <div class="book-heading">
+      <strong>{{book.title}}</strong> by <i class="book-author">{{book.author}}</i>
+    </div>
+    <div class="book-description">
+      <p>
+        {{showMore ? book.summary : book.summary | truncate: 330}}
+        <span
+          *ngIf="book.summary.length >= 330"
+          class="show-more"
+          (click)="showDescription()"
+        >
+          {{showMore ? "show less" : "show more"}}
+        </span>
+      </p>
+
+    </div>
+    <div class="book-price">
+      {{book.price.displayValue}} {{book.price.currency}}
+    </div>
+    <button (click)="toggleFavorite()">{{favorites.includes(book.title) ? "dislike" : "like"}}</button>
+  </div>
+</li>

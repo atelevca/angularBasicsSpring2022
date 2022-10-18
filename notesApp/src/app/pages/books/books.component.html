@@ -1,0 +1,45 @@
+<div class="books-wrapper">
+  <input type="text" class="search-books" placeholder="Search books..." [(ngModel)]="searchQuery"/>
+  <div class="grid-type">
+    Grid type
+    <div class="grid-type__dropdown">
+      <div (click)="setGridType('grid')" appDropdown>grid</div>
+      <div (click)="setGridType('row')" appDropdown>row</div>
+    </div>
+  </div>
+  <div *ngIf="favorites.length !== 0">
+    Liked books
+    <ul>
+      <li *ngFor="let item of favorites">{{item}}</li>
+    </ul>
+  </div>
+  <ul *ngIf="gridType === 'row'" class="books-list" [ngStyle]="currentStyles">
+    <app-book
+      *ngFor="let book of books | searchFilter: searchQuery; let i = index"
+      [book]="book"
+      [i]="i"
+      (onToggleFavorite)="toggleFavorite($event)"
+      [favorites]="favorites">
+    </app-book>
+  </ul>
+  <ul *ngIf="gridType === 'grid'" class="books-list" [ngStyle]="currentStyles">
+    <div class="masonry-column">
+      <app-book
+        *ngFor="let book of evenGridBooks | searchFilter: searchQuery; let i = index"
+        [book]="book"
+        [i]="i"
+        (onToggleFavorite)="toggleFavorite($event)"
+        [favorites]="favorites">
+      </app-book>
+    </div>
+    <div class="masonry-column">
+      <app-book
+        *ngFor="let book of oddGridBooks | searchFilter: searchQuery; let i = index"
+        [book]="book"
+        [i]="i"
+        (onToggleFavorite)="toggleFavorite($event)"
+        [favorites]="favorites">
+      </app-book>
+    </div>
+  </ul>
+</div>

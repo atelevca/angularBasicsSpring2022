@@ -1,0 +1,8 @@
+<main>
+    <div [className]="'books-container'">
+        <div (click)="selectBook(item)" [className]="'book-container'" *ngFor="let item of books">
+            <img appBookHover src="{{item.image}}" alt="">
+            <p>{{item.title}}</p>
+        </div>
+    </div>
+</main>

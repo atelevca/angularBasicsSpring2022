@@ -4,21 +4,21 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
-import { NewNoteComponent } from './components/new-note/new-note.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { NoteComponent } from './components/note/note.component';
+import { BooksContainerComponent } from './components/books-container/books-container.component';
 
-import { HighlightDirective } from './directives/highlight.directive';
-import { TruncatePipe } from './pipes/truncate.pipe';
+import { CapitalLetterPipe } from './pipes/capital-letter.pipe';
+import { BookHoverDirective } from './directives/book-hover.directive';
+import { BookComponent } from './components/book/book.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NoteComponent,
-    NewNoteComponent,
     NavbarComponent,
-    HighlightDirective,
-    TruncatePipe,
+    BooksContainerComponent,
+    CapitalLetterPipe,
+    BookHoverDirective,
+    BookComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],

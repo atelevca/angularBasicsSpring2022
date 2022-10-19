@@ -1,0 +1,3 @@
+<app-navbar></app-navbar>
+<app-books-container (bookSelected)="getBook($event)" (modalOpen)="getShowModal($event)"></app-books-container>
+<app-book [book]="book" [showModal]="showModal" (closeModal)="closeModal($event)"></app-book>

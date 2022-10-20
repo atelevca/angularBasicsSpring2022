@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
 import { Book } from 'src/app/models/book.model';
 
 @Component({
@@ -7,6 +7,7 @@ import { Book } from 'src/app/models/book.model';
   styleUrls: ['./book-card.component.scss']
 })
 export class BookCardComponent implements OnInit {
+  hover: boolean;
   @Input() book : Book = {
     "ISBN": 0,
     "title": "",
@@ -20,9 +21,17 @@ export class BookCardComponent implements OnInit {
     }
   } 
 
-  constructor() { }
+  @Output() selectBook = new EventEmitter();
+
+  constructor() {
+    this.hover = false;
+  }
 
   ngOnInit(): void {
   }
 
+  cardClicked() {
+    console.log('card clicked');
+    this.selectBook.emit({currentBook: this.book});
+  }
 }

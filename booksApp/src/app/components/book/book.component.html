@@ -1,0 +1,27 @@
+<div [ngClass]="showModal ? 'book-modal' : 'none'">
+    <div class="book-modal-container" (click)="closeModalHandler()">
+        <div class="modal-content">
+            <div class="modal-content-img">
+                <img src="{{ book.image }}" alt="{{ book.title }}" />
+            </div>
+            <div class="modal-content-description">
+                <h2>{{ book.title | uppercase }}</h2>
+                <p>
+                    Author: {{ book.author }}
+                </p>
+                <div [ngSwitch]="book.summary.length > 400">
+                    <p *ngSwitchCase="false">{{ book.summary | capitalLetter }}</p>
+                    <p *ngSwitchCase="true"
+                        [ngStyle]="{ color: book.summary.length % 2 === 0 ? 'rgb(114, 62, 62)' : 'black' }">
+                        {{ book.summary | capitalLetter }}
+                    </p>
+                </div>
+                <span class="price">
+                    {{ book.price.value }}
+                    {{ book.price.currency }}
+                </span>
+                <span>ISBN: {{ book.ISBN }}</span>
+            </div>
+        </div>
+    </div>
+</div>

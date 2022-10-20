@@ -10,5 +10,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./navbar.component.scss'],
 })
 export class NavbarComponent {
-  public label: string = 'NOTES';
+  public label: string = 'Books';
 }

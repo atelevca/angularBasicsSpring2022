@@ -1,0 +1,38 @@
+$primary: #00ABB3;
+$secondary: #EAEAEA;
+$background: #3C4048;
+$second-backgound: #B2B2B2;
+
+a {
+    text-decoration: none;
+    color: $secondary;
+}
+
+a:hover{
+    color: $primary;
+}
+
+li{
+    text-decoration: none;
+    list-style: none;
+}
+
+hr {
+    width: 100%;
+}
+
+p{
+    color: $secondary;
+    line-height: 1.6rem;
+}
+
+body{
+    margin: 0 auto;
+    padding: 0;
+    font-size: 1rem;
+    box-sizing: border-box;
+    font-family: "Rubik", sans-serif;
+    background-color: $background;
+    // background-image: url("https://www.transparenttextures.com/patterns/worn-dots.png");
+    width: 100%;
+}

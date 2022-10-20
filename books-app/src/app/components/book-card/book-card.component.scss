@@ -1,0 +1,29 @@
+@import "../../../styles.scss";
+
+.book-card{
+    background-color: $second-backgound;
+    padding: 1rem;
+    border-radius: 4%;
+    display: flex;
+    flex-direction: column;
+    width: 15rem;
+    height: 28rem;
+    scroll-snap-align: start;
+    cursor: pointer;
+    img{
+        width: 100%;
+        height: 20rem;
+        border-radius: 4%;
+        margin-bottom: 1rem;
+        object-fit: fill;
+        transition: transform .2s;
+        :hover{
+            transform:scale(1.5) ;
+        }
+    }
+    &__description{
+        color: $secondary;
+        line-height: 0.5rem;
+    }
+    
+}

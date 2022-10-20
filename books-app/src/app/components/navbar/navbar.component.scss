@@ -1,0 +1,17 @@
+@import "../../../styles.scss";
+
+header{
+    background-color: $primary;
+    width: 100%;
+    .nav{
+        width: 80%;
+        padding: 2rem 10%;
+        a{
+            font-size: 1.5rem;
+            &:hover{
+                color: $background;
+                cursor: pointer;
+            }
+        }
+    }
+}

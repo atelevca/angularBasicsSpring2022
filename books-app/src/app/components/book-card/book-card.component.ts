@@ -21,7 +21,7 @@ export class BookCardComponent implements OnInit {
     }
   } 
 
-  @Output() selectBook = new EventEmitter();
+  @Output() bookPrice = new EventEmitter();
 
   constructor() {
     this.hover = false;
@@ -30,8 +30,7 @@ export class BookCardComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  cardClicked() {
-    console.log('card clicked');
-    this.selectBook.emit({currentBook: this.book});
+  sendPrice(){
+    this.bookPrice.emit(this.book.price.value);
   }
 }

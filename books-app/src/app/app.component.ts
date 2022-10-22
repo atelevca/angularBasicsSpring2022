@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import booksData from "../assets/books.json"
 import { Book } from './models/book.model';
-import { BookDetailsComponent } from './components/book-details/book-details.component';
 
 
 @Component({
@@ -12,9 +11,13 @@ import { BookDetailsComponent } from './components/book-details/book-details.com
 
 export class AppComponent {
   title = 'books-app';
-
+  priceSum = 0
 
   books: Book[] = booksData;
+
+  receivePrice(price:number){
+    this.priceSum+=price
+  }
 
   constructor(){
   }

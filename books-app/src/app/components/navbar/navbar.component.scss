@@ -4,6 +4,9 @@ header{
     background-color: $primary;
     width: 100%;
     .nav{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
         width: 80%;
         padding: 2rem 10%;
         a{
@@ -13,5 +16,39 @@ header{
                 cursor: pointer;
             }
         }
+        &__cart{
+            border-radius: 1rem;
+            background-color: $second-backgound;
+            border:1px solid $background;
+            padding:0.5rem 1rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            justify-content: space-between;
+            &__full{
+                p{
+                    color:$green;
+                };
+                    circle,path{
+                        fill:$green;
+                    }
+            }
+            &__empty{
+                p{
+                    color:white;
+                }
+                circle,path{
+                    fill:white;
+                }
+            }
+            button{
+                padding:0.4rem;     
+                background-color: $primary;
+                border-radius:1rem;
+                border-color: $background;
+                color:$secondary;
+                cursor:pointer;
+            }
+        }       
     }
 }

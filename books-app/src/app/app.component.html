@@ -1,4 +1,4 @@
-<app-navbar></app-navbar>
+<app-navbar [priceSum]="priceSum"></app-navbar>
 <div class="book-container">
-    <app-book-card class="book-container__card" *ngFor="let book of books" [book]="book"></app-book-card>
+    <app-book-card (bookPrice)="receivePrice($event)" class="book-container__card" *ngFor="let book of books" [book]="book"></app-book-card>
 </div>

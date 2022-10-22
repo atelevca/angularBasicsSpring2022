@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Output, EventEmitter, Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-navbar',
@@ -8,7 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class NavbarComponent implements OnInit {
 
   @Input() priceSum:number = 0;
-
+  @Output() message = new EventEmitter();
   constructor() { }
 
   ngOnInit(): void {
@@ -20,6 +20,7 @@ export class NavbarComponent implements OnInit {
 
   clearCart(){
     this.priceSum=0
+    this.message.emit()
   }
 
 }

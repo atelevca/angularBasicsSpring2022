@@ -19,6 +19,10 @@ export class AppComponent {
     this.priceSum+=price
   }
 
+  receiveMessage(){
+    this.priceSum=0
+  }
+
   constructor(){
   }
 }

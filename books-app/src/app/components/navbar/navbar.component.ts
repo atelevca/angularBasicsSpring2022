@@ -14,10 +14,6 @@ export class NavbarComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  getParsedPriceSum():number{
-    return parseFloat(this.priceSum.toFixed(2))
-  }
-
   clearCart(){
     this.priceSum=0
     this.message.emit()

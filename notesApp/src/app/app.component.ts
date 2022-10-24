@@ -1,29 +1,15 @@
 import { Component } from '@angular/core';
-import { Note } from './models/note.model';
+import * as data from '../assets/books.json';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  public notes: Note[] = [
-    {
-      id: '0',
-      label: 'Welcome to Angular!',
-      data: 'Angular is a development platform for building mobile and desktop web applications using Typescript/JavaScript and other languages.',
-      date: new Date() + '',
-    },
-  ];
+  books: any = (data as any).default;
 
-  public addNewNote(note: Note): void {
-    this.notes.push({
-      ...note,
-      id: Math.random() + '',
-    });
-  }
-
-  public removeNote(id: string): void {
-    this.notes = this.notes.filter((el: Note) => el.id !== id);
+  closeModal(val: {index: number}){
+    this.books.splice(val.index, 1)
   }
 }

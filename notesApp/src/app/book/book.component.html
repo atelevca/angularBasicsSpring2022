@@ -1,0 +1,15 @@
+<div class="card" boxShadow>
+    <img src="{{item.book.image}}" alt="Book Image">
+    <div class="card_info">
+        <div class="card_content">
+            <h2>{{item.book.title | uppercase}}</h2>
+            <button mat-icon-button (click)="close()">
+                <mat-icon>close</mat-icon>
+            </button>
+        </div>
+        <p *ngIf="item.book.title.toUpperCase() !== 'DE AANSLAG'">Price: <span
+                [ngClass]="{'small_price': item.book.price.value <= 10}">{{item.book.price.displayValue + ' ' +
+                item.book.price.currency}}</span> | {{item.book.price.value | usd}}</p>
+        <p *ngIf="item.book.title.toUpperCase() === 'DE AANSLAG'" [ngStyle]="{'color': 'red'}">For FREE</p>
+    </div>
+</div>

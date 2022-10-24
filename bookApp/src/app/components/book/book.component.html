@@ -1,0 +1,11 @@
+<div class="card" hoverCard [thickness]="'1px'" [color]="'grey'">
+    <div>
+        <img [src]="book.image" alt="Book image">
+    </div>
+    <div class="card__description">
+        <h2>{{book.title}}</h2>
+        <h3>{{book.author}}</h3>
+        <h3>{{book.price.displayValue | currency: book.price.currency}}</h3>
+        <h6>{{book.summary | sentences}}</h6>
+    </div>
+</div>

@@ -1,0 +1,28 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 5px;
+
+  height: 100%;
+  padding: 30px;
+  border-radius: 5px;
+}
+
+.card img {
+  width: 100%;
+}
+
+.card__description {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.card__description h3 {
+  color: gray;
+}
+/* .card__description {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+} */

@@ -1,0 +1,6 @@
+<select name="filter" id="filter" [ngModel]="selectedFilter" (change)="changeValue($event)">
+    <option value="0">Name A-Z</option>
+    <option value="1">Name Z-A</option>
+    <option value="2">Price 0-9</option>
+    <option value="3">Price 9-0</option>
+</select>

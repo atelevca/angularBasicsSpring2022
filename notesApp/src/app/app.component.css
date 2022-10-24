@@ -1,0 +1,25 @@
+ul {
+  margin-top: 20px;
+}
+
+.note-number {
+  display: flex;
+  justify-content: center;
+  margin: 10px 0px;
+}
+.note-number p {
+  cursor: pointer;
+  color: #dc3545;
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.inline-row {
+  display: flex;
+  align-items: center;
+}
+.inline-row .index {
+  margin: 0px 7px;
+  color: #dc3545;
+  font-size: 25px;
+}/*# sourceMappingURL=app.component.css.map */

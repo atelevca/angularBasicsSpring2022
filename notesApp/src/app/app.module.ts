@@ -1,27 +1,26 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
-import { AppRoutingModule } from './app-routing.module';
+import { CardHoverDirective } from 'src/directives/hover.directive';
+import { EurToUsd } from 'src/pipes/eurToUsd.pipe';
 
 import { AppComponent } from './app.component';
-import { NewNoteComponent } from './components/new-note/new-note.component';
-import { NavbarComponent } from './components/navbar/navbar.component';
-import { NoteComponent } from './components/note/note.component';
-
-import { HighlightDirective } from './directives/highlight.directive';
-import { TruncatePipe } from './pipes/truncate.pipe';
+import { BookComponent } from './book/book.component';
+import { MaterialModule } from './material.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NoteComponent,
-    NewNoteComponent,
-    NavbarComponent,
-    HighlightDirective,
-    TruncatePipe,
+    BookComponent,
+    EurToUsd,
+    CardHoverDirective
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule],
+  imports: [
+    BrowserModule,
+    MaterialModule,
+    BrowserAnimationsModule
+  ],
   providers: [],
-  bootstrap: [AppComponent],
+  bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }
